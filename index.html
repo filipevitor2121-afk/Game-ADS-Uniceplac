@@ -23,6 +23,17 @@
 
   <script src="./src/phaser.js"></script>
   <script src="./src/index.js" type="module"></script>
-<script type="text/javascript" src="bundle.min.js"></script></body>
+<script type="text/javascript" src="bundle.min.js"></script>
+
+<audio id="bgMusic" src="musica_fundo.mp3" loop autoplay></audio>
+
+  <script>
+  // Garante que a música toque apenas depois da primeira interação (para evitar bloqueios)
+  const music = document.getElementById('bgMusic');
+  document.addEventListener('keydown', () => {
+      music.play();
+  }, { once: true });
+</script>
+</body>
 
 </html>
